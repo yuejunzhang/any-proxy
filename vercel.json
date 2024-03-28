@@ -1,0 +1,19 @@
+{
+  "name": "single-proxy",
+  "version": 2,
+  "builds": [
+    {
+      "src": "/web/d.go",
+      "use": "@vercel/go"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "/web/d.go"
+    }
+  ],
+  "env": {
+    "CONFIG": "https://raw.githubusercontent.com/bincooo/single-proxy/main/config.yaml"
+  }
+}
